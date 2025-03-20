@@ -1,0 +1,31 @@
+<div class="container customContent">
+    <form [formGroup]="personForm" class="row g-3 needs-validation" novalidate (submit)="SendToCreate($event)">
+        <div class="mb-3">
+            <label for="labelName" class="form-label">Nombre</label>
+            <input type="text" class="form-control"  id="labelName" formControlName="Name" [ngClass]="{'is-invalid' : hasErrorsItemForm('Name')}" />
+        </div>
+        <div class="mb-3">
+            <label for="labelDirection" class="form-label">Dirección</label>
+            <input type="text" class="form-control" id="labelDirection" formControlName="Direction" [ngClass]="{'is-invalid' : hasErrorsItemForm('Direction')}" />
+        </div>
+        <div class="mb-3">
+            <label for="labelPhone" class="form-label">Teléfono</label>
+            <input type="text" class="form-control"  id="labelPhone" formControlName="Phone" [ngClass]="{'is-invalid' : hasErrorsItemForm('Phone')}" />
+        </div>
+        <div class="mb-3">
+            <label for="labelEmail" class="form-label">Email</label>
+            <input type="text" class="form-control"  id="labelEmail" formControlName="Email" [ngClass]="{'is-invalid' : hasErrorsItemForm('Email')}" />
+        </div>
+        <div class="mb-3">
+            <label for="labelAge" class="form-label">Edad</label>
+            <input type="text" class="form-control"  id="labelAge" formControlName="Age" [ngClass]="{'is-invalid' : hasErrorsItemForm('Age')}" />
+        </div>
+
+        <div class="col-12">
+            <button class="btn btn-success" type="submit">Crear Persona</button>
+        </div>
+    </form>
+    <div class="col-12">
+        <button class="btn btn-light" type="submit" (click)="navigateHome()">Regresar</button>
+    </div>
+</div>

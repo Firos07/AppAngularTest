@@ -1,0 +1,41 @@
+
+<div class="container customContent">
+   <div>
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Nombre ó Email" aria-label="Search" [(ngModel)]="inputValue" name="inputValue" >
+            <br />
+            <button type="button" class="btn btn-primary"  (click)="getSpecificPersons()">Buscar</button>
+        </form>
+   </div>
+   <br />
+   <br />
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Dirección</th>
+            <th scope="col">Teléfono</th>
+            <th scope="col">Email</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of personList">
+            <th scope="row">{{item.id}}</th>
+            <td>{{item.name}}</td>
+            <td>{{item.direction}}</td>
+            <td>{{item.phone}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.age}}</td>
+            <td>
+                <!-- button type="button" class="btn btn-warning customInnerButton">Editar</button -->
+                <button type="button" class="btn btn-danger customInnerButton" (click)="deletePersonById(item.id)" >Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <button type="button" class="btn btn-success" (click)="navigateToCreate()">Crear Nuevo</button>
+</div>
